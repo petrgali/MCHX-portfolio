@@ -1,10 +1,11 @@
 <template>
   <div class="preview">
     <img
-      v-for="collection of collections"
-      :key="collection.source"
-      :src="collection.previewURL"
-      :alt="collection.name"
+      v-for="element of preview"
+      :key="element.source"
+      :src="element.previewURL"
+      :meta_collection="element.collection"
+      :meta_name="element.previewName"
     />
   </div>
 </template>
@@ -15,7 +16,7 @@ export default {
   data() {
     return {
       //API call here//
-      collections: folderCrawler.getCollectionsName(),
+      preview: folderCrawler.getCollections(),
     };
   },
 };

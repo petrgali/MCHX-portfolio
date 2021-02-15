@@ -2,8 +2,8 @@
   <div class="fixed nav">
     <div class="nav p-5">
       <p>MCHX</p>
-      <p>{{ img.category }}</p>
-      <p>{{ img.name }}</p>
+      <p>{{ img.category.toUpperCase() }}</p>
+      <p>{{ img.name.toUpperCase() }}</p>
       <p>INFO</p>
     </div>
   </div>

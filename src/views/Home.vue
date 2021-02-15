@@ -11,8 +11,7 @@ export default {
   data() {
     return {
       observer: null,
-      userRatio: 0.4,
-      message: "hello",
+      userRatio: 0.65,
       img: {
         category: "",
         name: "",
@@ -23,9 +22,8 @@ export default {
     intersectHandler(changes) {
       changes.forEach((change) => {
         if (change.intersectionRatio > this.userRatio) {
-          this.img.category = change.target.alt.toUpperCase();
-          let tmp = change.target.src.split("/");
-          this.img.name = tmp[tmp.length - 1].toUpperCase();
+          this.img.category = change.target.attributes.meta_collection.value;
+          this.img.name = change.target.attributes.meta_name.value;
         }
       });
     },
