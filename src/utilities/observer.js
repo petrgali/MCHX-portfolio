@@ -1,18 +1,26 @@
-const handleIntersect = (entries) => {
-    entries.map((entry) => {
-        // if (entry.isIntersectionRatio > 0.5) {
-        alert(entry.target.src)
-        // }
+let userRatio
+
+const handleIntersect = (changes) => {
+    changes.forEach((change) => {
+        if (change.intersectionRatio > userRatio) {
+            alert(change.target.src)
+        }
     })
 }
-let options = {
-    // root: null,
-    // rootMargin: "0px",
-    treshhold: 0.9
+const detectIntersection = (images, ratio) => {
+    if ('IntersectionObserver' in window) {
+        userRatio = ratio || 0
+        let options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: userRatio
+        };
+
+        let observer = new IntersectionObserver(handleIntersect, options);
+        images.forEach(img => observer.observe(img));
+    } else {
+        //lack of browser functionality case//    
+    }
 }
-let observer
-observer = new IntersectionObserver(handleIntersect, options)
-const detectIntersection = (imgs) => {
-    imgs.forEach(img => observer.observe(img))
-}
+
 export default detectIntersection

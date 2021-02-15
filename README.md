@@ -1,4 +1,4 @@
-# portfoliospa
+# MCHX portfolio - VUE SPA
 
 ## Project setup
 ```

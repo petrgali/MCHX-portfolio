@@ -1,5 +1,4 @@
 <template>
-  <!-- <section class="scrollArea"> -->
   <div class="preview">
     <img
       v-for="collection of collections"
@@ -7,7 +6,6 @@
       :src="collection.previewURL"
     />
   </div>
-  <!-- </section> -->
 </template>
 
 <script>
@@ -22,8 +20,8 @@ export default {
   },
 
   mounted() {
-    let imgs = document.querySelectorAll("img");
-    detectIntersection(imgs);
+    let images = document.querySelectorAll("img");
+    detectIntersection(images, 0.5);
   },
 };
 </script>
