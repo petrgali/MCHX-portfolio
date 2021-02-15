@@ -2,15 +2,20 @@
   <div class="fixed nav">
     <div class="nav p-5">
       <p>MCHX</p>
-      <p>CATEGORY</p>
-      <p>PROJECT NAME</p>
+      <p>{{ img.category }}</p>
+      <p>{{ img.name }}</p>
       <p>INFO</p>
     </div>
   </div>
 </template>
 
-<style>
+<script>
+export default {
+  props: ["img"],
+};
+</script>
 
+<style>
 .fixed.nav {
   position: fixed;
   width: 100%;

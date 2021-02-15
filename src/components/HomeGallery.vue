@@ -4,24 +4,19 @@
       v-for="collection of collections"
       :key="collection.source"
       :src="collection.previewURL"
+      :alt="collection.name"
     />
   </div>
 </template>
 
 <script>
 import folderCrawler from "../utilities/folderCrawler";
-import detectIntersection from "../utilities/observer";
 export default {
   data() {
     return {
-      // API call to fetch collections//
+      //API call here//
       collections: folderCrawler.getCollectionsName(),
     };
-  },
-
-  mounted() {
-    let images = document.querySelectorAll("img");
-    detectIntersection(images, 0.5);
   },
 };
 </script>
