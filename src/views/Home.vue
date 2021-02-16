@@ -25,6 +25,7 @@ export default {
           this.img.category = change.target.attributes.meta_collection.value;
           this.img.name = change.target.attributes.meta_name.value;
         }
+        if (change.isIntersected) console.log("detect new image");
       });
     },
   },

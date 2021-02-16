@@ -1,10 +1,10 @@
 <template>
   <div class="fixed nav">
     <div class="nav p-5">
-      <p>MCHX</p>
-      <p>{{ img.category.toUpperCase() }}</p>
-      <p>{{ img.name.toUpperCase() }}</p>
-      <p>INFO</p>
+      <p class="link">MCHX</p>
+      <p class="link">{{ img.category.toUpperCase() }}</p>
+      <p class="link">{{ img.name.toUpperCase() }}</p>
+      <p class="link">INFO</p>
     </div>
   </div>
 </template>
@@ -29,5 +29,8 @@ export default {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.link {
+  cursor: pointer;
 }
 </style>
