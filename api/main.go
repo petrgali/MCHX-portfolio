@@ -4,20 +4,21 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"spaAPI/internal"
 	"time"
 )
 
 func main() {
-	db, err := dbInit(os.Getenv("DATABASE_URL"))
-	if err != nil {
-		log.Printf("database connection failed. Reason: %s", err.Error())
-	}
+	// db, err := dbInit(os.Getenv("DATABASE_URL"))
+	// if err != nil {
+	// 	log.Printf("database connection failed. Reason: %s", err.Error())
+	// }
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 		log.Printf("PORT set to default value `8080`. Reason: %s", "%PORT not set")
 	}
-	mux := routerInit(db)
+	mux := internal.RouterInit()
 	s := &http.Server{
 		Addr:           ":" + port,
 		Handler:        mux,
