@@ -1,6 +1,10 @@
 package internal
 
-import "database/sql"
+import (
+	"database/sql"
+
+	_ "github.com/lib/pq"
+)
 
 type DBconn struct {
 	Conn *sql.DB
